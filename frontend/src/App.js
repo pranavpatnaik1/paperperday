@@ -6,7 +6,7 @@ function App() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl font-normal mb-4" style={{ fontFamily: 'Poppins' }}>
+          <h1 className="text-8xl font-normal mb-4" style={{ fontFamily: 'Poppins' }}>
             paperperday
           </h1>
           <p className="text-xl text-gray-700" style={{ fontFamily: 'Poppins' }}>
