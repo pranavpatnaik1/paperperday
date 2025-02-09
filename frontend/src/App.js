@@ -148,7 +148,7 @@ function App() {
       </div>
 
       {/* Background Images */}
-      <img src="/gpt equation.png" alt="Background" className="absolute bg-image" style={{ top: '23%', left: '52%', width: '200px', transform: 'rotate(10deg)' }} />
+      <img src="/gpt equation.png" alt="Background" className="absolute bg-image" style={{ top: '10%', left: '52%', width: '200px', transform: 'rotate(10deg)' }} />
       <img src="/gradient descent.png" alt="Background" className="absolute bg-image" style={{ top: '20%', left: '65%', width: '300px' }} />
       <img src="/normalization.png" alt="Background" className="absolute bg-image" style={{ top: '23%', left: '36%', width: '120px' }} />
       <img src="/big NN.png" alt="Background" className="absolute bg-image" style={{ top: '8%', left: '10%', width: '180px' }} />
