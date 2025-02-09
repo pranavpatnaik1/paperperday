@@ -42,3 +42,19 @@
     transform: rotate(360deg);
   }
 }
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+}
+
+.bg-image {
+  opacity: 0.15; /* Adjust opacity as needed */
+  height: auto;
+  pointer-events: none; /* Make sure images don't interfere with interactions */
+}
+
+.bg-image2 {
+  opacity: 0.3; /* Adjust opacity as needed */
+  height: auto;
+  pointer-events: none; /* Make sure images don't interfere with interactions */
+}
