@@ -140,7 +140,7 @@ function App() {
             <a href="https://www.reddit.com/r/paperperday/" target="_blank" rel="noopener noreferrer">
               <img src="/reddit logo.png" alt="Reddit" className="w-10 h-10" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/paperperday1" target="_blank" rel="noopener noreferrer">
               <img src="/x logo.png" alt="Twitter" className="w-10 h-10" />
             </a>
           </div>
