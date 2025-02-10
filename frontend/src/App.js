@@ -134,10 +134,10 @@ function App() {
             join the discussion:
           </h2>
           <div className="flex justify-center space-x-4">
-            <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://discord.gg/jSBVkgm9Gh" target="_blank" rel="noopener noreferrer">
               <img src="/discord logo.png" alt="Discord" className="w-10 h-10" />
             </a>
-            <a href="https://reddit.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.reddit.com/r/paperperday/" target="_blank" rel="noopener noreferrer">
               <img src="/reddit logo.png" alt="Reddit" className="w-10 h-10" />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
