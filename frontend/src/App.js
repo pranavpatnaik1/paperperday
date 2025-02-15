@@ -7,7 +7,7 @@ function App() {
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-32">
-          <h1 className="text-9xl font-normal mb-8 fade-in-up" style={{ fontFamily: 'Poppins' }}>
+          <h1 className="text-9xl font-normal mb-8 fade-in-up responsive-title" style={{ fontFamily: 'Poppins' }}>
             paperperday
           </h1>
           <p className="text-3xl text-gray-700 fade-in-up" style={{ fontFamily: 'Poppins' }}>
