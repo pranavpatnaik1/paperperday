@@ -7,12 +7,13 @@ function App() {
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-32">
-          <h1 className="text-9xl font-normal mb-8 fade-in-up responsive-title" style={{ fontFamily: 'Poppins' }}>
+          <h1 className="font-normal mb-8 fade-in-up responsive-title" style={{ fontFamily: 'Poppins', fontSize: 'clamp(4rem,12vw,9rem)'  }}>
             paperperday
           </h1>
           <p className="text-3xl text-gray-700 fade-in-up" style={{ fontFamily: 'Poppins' }}>
             daily papers in ML
           </p>
+          
         </div>
 
         {/* Divider line */}
@@ -52,7 +53,7 @@ function App() {
           {/* LINK TO PAPER */}
           <div className="mt-2">
             <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 underline" style={{ fontFamily: 'Poppins' }}>
-              arxiv
+              arxiv 
             </a>
           </div>
         </div>
@@ -148,8 +149,8 @@ function App() {
       </div>
 
       {/* Background Images */}
-      <img src="/just images.png" alt="Background" className="absolute bg-image" style={{ top: '10%', left: '50%', width: '200px' }} />
-      {/* <img src="/gpt equation.png" alt="Background" className="absolute bg-image" style={{ top: '13%', left: '52%', width: '200px', transform: 'rotate(10deg)' }} />
+      <img src="/images.png" alt="Background" className="absolute bg-image" style={{ top: '-1%', left: '2%', width: '2000px'}} />
+      {/* 
       <img src="/gradient descent.png" alt="Background" className="absolute bg-image" style={{ top: '12%', left: '65%', width: '300px' }} />
       <img src="/normalization.png" alt="Background" className="absolute bg-image" style={{ top: '13%', left: '36%', width: '120px' }} />
       <img src="/big NN.png" alt="Background" className="absolute bg-image" style={{ top: '5%', left: '10%', width: '180px' }} />
