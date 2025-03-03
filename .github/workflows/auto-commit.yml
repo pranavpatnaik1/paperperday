@@ -31,7 +31,14 @@ jobs:
 
       - name: Commit and Push changes
         run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+
           git add .
           git commit -m "Automated daily update: $(date)" || echo "No changes to commit"
-          git pull --rebase origin main || git rebase --abort  # Ensure rebase completes
-          git push origin main
+
+          # Ensure we are up to date
+          git pull --rebase origin main || git rebase --abort  
+
+          # Push the updates
+          git push --force origin main
