@@ -9,41 +9,29 @@ jobs:
   update-repo:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Explicitly request write permissions
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # Use the built-in token
-          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # Don't use fetch-depth: 0 - we want a clean checkout
 
-      - name: Configure Git
+      - name: Make changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Update repository
-        run: |
-          # Fetch the latest changes
-          git fetch origin main
-
-          # Create and checkout a new branch for our changes
-          git checkout -b temp-update-branch
-
-          # Make your changes
           echo "Last updated: $(date)" > last_updated.txt
 
-          # Commit changes
-          git add .
-          git commit -m "Automated daily update: $(date)" || echo "No changes to commit"
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
 
-          # Switch back to main and update it
-          git checkout main
-          git pull origin main
-
-          # Merge our changes (with ours strategy to resolve conflicts)
-          git merge temp-update-branch -X ours --no-edit
-
-          # Push changes with the token
-          git push "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main
+      - name: Deploy using peaceiris/actions-gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: .
+          force_orphan: false
+          commit_message: "Automated daily update: $(date)"
