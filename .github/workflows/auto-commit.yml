@@ -25,14 +25,13 @@ jobs:
         run: |
           echo "Last updated: $(date)" > last_updated.txt
 
-          - name: Pull latest changes
-          run: |
-            git pull --rebase origin main
+      - name: Pull latest changes
+        run: |
+          git pull --rebase origin main
 
       - name: Commit and Push changes
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add .
-          git commit --allow-empty -m "Automated daily update: $(date)"
-          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+          git commit -m "Automated daily update: $(date)" || echo "No changes to commit"
+          git pull --rebase origin main || git rebase --abort  # Ensure rebase completes
+          git push origin main
