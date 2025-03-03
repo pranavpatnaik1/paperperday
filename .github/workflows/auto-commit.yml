@@ -2,8 +2,7 @@ name: Auto Update and Push
 
 on:
   schedule:
-    - cron: "0 5 * * *" # Runs daily at midnight UTC
-
+    - cron: "0 5 * * *" # Runs daily at 5 AM UTC
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -15,30 +14,28 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0 # Ensure full history is available to prevent issues
 
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Make changes (e.g., pull latest data)
+      - name: Pull latest changes before making updates
+        run: |
+          git pull --rebase origin main || git rebase --abort
+
+      - name: Make changes (e.g., update timestamp)
         run: |
           echo "Last updated: $(date)" > last_updated.txt
 
-      - name: Pull latest changes
-        run: |
-          git pull --rebase origin main
-
       - name: Commit and Push changes
         run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "GitHub Actions"
-
           git add .
           git commit -m "Automated daily update: $(date)" || echo "No changes to commit"
 
-          # Ensure we are up to date
+          # Ensure the latest changes are applied
           git pull --rebase origin main || git rebase --abort  
 
-          # Push the updates
-          git push --force origin main
+          # Push the updates safely
+          git push origin main
