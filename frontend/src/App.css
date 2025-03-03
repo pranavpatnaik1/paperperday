@@ -20,23 +20,13 @@
 
 /* Default styles for larger screens */
 h1 {
-  font-size: 5rem; /* Adjust as needed */
+  font-size: 11vw;
 }
 
-/* Adjust font size for medium screens */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 3.5rem;
-  }
+.subtitle {
+  margin-top: -1px;
+  font-size: 4vw;
 }
-
-/* Adjust font size for smaller screens */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-}
-
 
 .App-header {
   background-color: #282c34;

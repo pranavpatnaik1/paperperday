@@ -8,10 +8,10 @@ function App() {
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-32">
-          <h1 className="font-normal mb-4 fade-in-up responsive-title" style={{ fontFamily: 'Poppins', fontSize: 'clamp(4rem,12vw,9rem)'  }}>
+          <h1 className="mb-4 fade-in-up title" style={{ fontFamily: 'Poppins' }}>
             paperperday
           </h1>
-          <p className="text-gray-700 fade-in-up" style={{ fontFamily: 'Poppins', fontSize: 'clamp(2rem,4vw,3rem)' }}>
+          <p className="text-gray-700 fade-in-up subtitle" style={{ fontFamily: 'Poppins'}}>
             daily papers in ML
           </p>
         </div>
