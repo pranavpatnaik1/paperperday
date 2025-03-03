@@ -1,0 +1,46 @@
+{
+  "today": {
+      "title": "Attention is All You Need",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin",
+      "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks that include an encoder and a decoder. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of ...",
+      "date": "2025/03/02",
+      "link": "https://arxiv.org/pdf/1706.03762.pdf"
+  },
+  "past": [
+      {
+          "title": "ImageNet Classification with Deep Convolutional Neural Networks",
+          "link": "https://arxiv.org/pdf/1409.1556.pdf",
+          "date": "2025/02/08"
+      },
+      {
+          "title": "Deep Residual Learning for Image Recognition",
+          "link": "https://arxiv.org/pdf/1512.03385.pdf",
+          "date": "2025/02/08"
+      },
+      {
+          "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+          "link": "https://arxiv.org/pdf/1409.0473.pdf",
+          "date": "2025/02/08"
+      },
+      {
+          "title": "Adam: A Method for Stochastic Optimization",
+          "link": "https://arxiv.org/pdf/1412.6980.pdf",
+          "date": "2025/02/08"
+      },
+      {
+          "title": "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks",
+          "link": "https://arxiv.org/pdf/1511.06434.pdf",
+          "date": "2025/02/08"
+      },
+      {
+        "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+        "link": "https://arxiv.org/pdf/1810.04805.pdf",
+        "date": "2025/02/08"
+      },
+      {
+        "title": "Mask R-CNN",
+        "link": "https://arxiv.org/pdf/1703.06870.pdf",
+        "date": "2025/02/08"
+      }
+  ]
+}
