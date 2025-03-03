@@ -20,12 +20,11 @@
 
 /* Default styles for larger screens */
 h1 {
-  font-size: 11vw;
+  font-size: 12vw;
 }
 
 .subtitle {
-  margin-top: -1px;
-  font-size: 4vw;
+  font-size: 5vw;
 }
 
 .App-header {
