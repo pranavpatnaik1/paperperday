@@ -25,6 +25,10 @@ jobs:
         run: |
           echo "Last updated: $(date)" > last_updated.txt
 
+          - name: Pull latest changes
+          run: |
+            git pull --rebase origin main
+
       - name: Commit and Push changes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
