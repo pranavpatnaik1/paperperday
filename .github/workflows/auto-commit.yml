@@ -8,38 +8,42 @@ on:
 jobs:
   update-repo:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Explicitly request write permissions
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: true
-          fetch-depth: 0 # Ensure full history is available
+          token: ${{ secrets.GITHUB_TOKEN }} # Use the built-in token
+          fetch-depth: 0
 
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Make changes (e.g., update timestamp)
+      - name: Update repository
         run: |
+          # Fetch the latest changes
+          git fetch origin main
+
+          # Create and checkout a new branch for our changes
+          git checkout -b temp-update-branch
+
+          # Make your changes
           echo "Last updated: $(date)" > last_updated.txt
 
-      - name: Commit changes
-        run: |
+          # Commit changes
           git add .
           git commit -m "Automated daily update: $(date)" || echo "No changes to commit"
 
-      - name: Fetch and merge changes
-        run: |
-          # Fetch latest changes
-          git fetch origin main
-          # Merge with strategy to prefer our changes in case of conflicts
-          git merge -X ours --no-edit origin/main || git merge --abort
+          # Switch back to main and update it
+          git checkout main
+          git pull origin main
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          force: false
+          # Merge our changes (with ours strategy to resolve conflicts)
+          git merge temp-update-branch -X ours --no-edit
+
+          # Push changes with the token
+          git push "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main
