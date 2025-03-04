@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* src/index.css */
 @tailwind base;
 @tailwind components;
@@ -5,6 +7,7 @@
 
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .App-logo {
@@ -20,11 +23,42 @@
 
 /* Default styles for larger screens */
 h1 {
-  font-size: 12vw;
+  font-size: 8vw;
+}
+
+.title {
+  font-weight: 500;
 }
 
 .subtitle {
   font-size: 5vw;
+}
+
+.section-divider {
+  margin-top: -50px;
+  margin-bottom: 100px;
+  background-color: #d2d2d294;
+  border: none;
+  justify-self: center;
+  height: 1px;
+  width: 80%;
+}
+
+/* Media queries for section-divider */
+@media (max-width: 768px) {
+  .section-divider {
+    margin-top: -30px;
+    margin-bottom: 60px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-divider {
+    margin-top: -20px;
+    margin-bottom: 40px;
+    width: 95%;
+  }
 }
 
 .App-header {
@@ -62,12 +96,9 @@ h1 {
 }
 
 .bg-image {
-  height: auto;
-  pointer-events: none; /* Make sure images don't interfere with interactions */
-}
-
-.bg-image2 {
-  opacity: 0.3; /* Adjust opacity as needed */
+  position: absolute;
+  top: -100px;
+  opacity: 0.4;
   height: auto;
   pointer-events: none; /* Make sure images don't interfere with interactions */
 }
@@ -89,23 +120,14 @@ h1 {
   }
 }
 
-/* Default styles for larger screens */
-.bg-image {
-  width: 200px; /* Adjust as needed */
-}
-
-
-
 /* Adjust image size and position for medium screens */
 @media (max-width: 768px) {
   .bg-image {
     width: 150px; /* Adjust as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
   }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 /* Adjust image size and position for smaller screens */
@@ -116,7 +138,14 @@ img {
 }
 
 .fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.fade-in-up.active {
   animation: fadeInUp 0.5s ease-out forwards;
+  visibility: visible;
 }
 
 .scrollable-section {
@@ -144,4 +173,20 @@ img {
 
 .authors {
   width: 70%;
+}
+
+/* Title animations */
+.title.fade-in-up.active {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.subtitle.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-delay: 0.1s; /* Wait for title to finish before starting */
+}
+
+.subtitle.fade-in-up.active {
+  animation: fadeInUp 0.3s ease-out forwards;
+  animation-delay: 0.5s; /* Keep consistent with the delay above */
 }
